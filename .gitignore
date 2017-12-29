@@ -1,0 +1,5 @@
+# executable or executable name
+*.out
+*.exe
+*.app
+pso
