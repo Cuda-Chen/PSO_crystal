@@ -1,12 +1,5 @@
 # http://ccy.dd.ncu.edu.tw/~chen/resource/pso/pso.htm
 
-# macro for definition here
-macro for(expr)
-  {{expr.args.first.args.first}}.each do |{{expr.name.id}}|
-    {{expr.args.first.block.body}}
-  end
-end
-
 Dim = 2 # Dimension of problem's search space
 NumParticle = 40 # Number of particles in population
 max_cycle = 100 # Maximum iteration cycle
@@ -16,26 +9,26 @@ C2 = 1.5
 # Variable Declaration
 
 # Lower bound and upper bound for each dimension
-xLo = Array(Float64).new(Dim)
-xHi = Array(Float64).new(Dim)
+xLo = Array(Float64).new(Dim, 0.0)
+xHi = Array(Float64).new(Dim, 0.0)
 
 # current velocity of particle
-v = Array(Float64).new(Dim * NumParticle)
+v = Array(Float64).new(Dim * NumParticle, 0.0)
 
 # current position of particle
-x = Array(Float64).new(Dim * NumParticle)
+x = Array(Float64).new(Dim * NumParticle, 0.0)
 
 # individual optimal fitness
-individual_optimal_fit = Array(Float64).new(NumParticle)
+individual_optimal_fit = Array(Float64).new(NumParticle, 0.0)
 
 # individual optimal position
-individual_optimal_x = Array(Float64).new(Dim * NumParticle)
+individual_optimal_x = Array(Float64).new(Dim * NumParticle, 0.0)
 
 # social optimal fitness
 social_optimal_fit = 0.0
 
 # social optimal position
-social_optimal_x = Array(Float64).new(Dim)
+social_optimal_x = Array(Float64).new(Dim, 0.0)
 
 # rand number generate here
 fRan = Random.new.rand(1.0..123456789.0)

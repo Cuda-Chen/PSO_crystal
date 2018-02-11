@@ -3,3 +3,6 @@
 *.exe
 *.app
 pso
+
+# output file
+result.txt
