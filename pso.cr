@@ -46,11 +46,33 @@ puts "initialization done"
 xLo[0] = xLo[1] = -5.0
 xHi[0] = xHi[1] = 5.0
 
-for i in 0...Dim do
-  for j in 0...NumParticle do
-    x[(i * NumParticle) + j] = individual_optimal_x[(i * NumParticle) + j] = Random.new.rand(xLo[i], xHi[i])
-    v[(i * NumParticle) + j] = Random.new.rand(xLo[i] / 20.0, xHi[i] / 20.0)
-  end 
+#for i in 0...Dim do
+#  for j in 0...NumParticle do
+#    x[(i * NumParticle) + j] = individual_optimal_x[(i * NumParticle) + j] = Random.new.rand(xLo[i], xHi[i])
+#    v[(i * NumParticle) + j] = Random.new.rand(xLo[i] / 20.0, xHi[i] / 20.0)
+#  end 
+#end
+
+#Dim.times do |i| {
+#  {
+#  NumParticle.times do |j| {
+#    {
+#    x[(i * NumParticle) + j] = individual_optimal_x[(i * NumParticle) + j] = Random.new.rand(xLo[i], xHi[i])
+#    v[(i * NumParticle) + j] = Random.new.rand(xLo[i] / 20.0, xHi[i] / 20.0)
+#    }
+#  }
+#  end
+#  }
+#}
+#end
+
+(0...Dim).each do |i| {{
+    (0...NumParticle).each do |j| {{
+      x[(i * NumParticle) + j] = individual_optimal_x[(i * NumParticle) + j] = Random.new.rand(xLo[i], xHi[i])
+      v[(i * NumParticle) + j] = Random.new.rand(xLo[i] / 20.0, xHi[i] / 20.0)
+    }}
+    end
+  }}
 end
 
 for j in 0...NumParticle do
