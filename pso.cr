@@ -66,13 +66,13 @@ xHi[0] = xHi[1] = 5.0
 #}
 #end
 
-(0...Dim).each do |i| {{
-    (0...NumParticle).each do |j| {{
-      x[(i * NumParticle) + j] = individual_optimal_x[(i * NumParticle) + j] = Random.new.rand(xLo[i], xHi[i])
-      v[(i * NumParticle) + j] = Random.new.rand(xLo[i] / 20.0, xHi[i] / 20.0)
-    }}
-    end
-  }}
+(0...Dim).each do |i| {
+  (0...NumParticle).each do |j| {
+    x[(i * NumParticle) + j] = individual_optimal_x[(i * NumParticle) + j] = Random.new.rand(xLo[i], xHi[i])
+    v[(i * NumParticle) + j] = Random.new.rand(xLo[i] / 20.0, xHi[i] / 20.0)
+  }
+  end
+}
 end
 
 for j in 0...NumParticle do
